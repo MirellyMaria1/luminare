@@ -3,9 +3,9 @@ import 'package:untitled3/domain/user.dart';
 import 'package:sqflite/sqflite.dart';
 
 class UserDao {
-  saveUser(User user) async {
+  saveUser(Register register) async {
     Database database = await DBHelper().initDB();
-    database.insert('USER', user.toJson());
+    database.insert('REGISTER', register.toJson());
   }
 
   autenticar(String username, String password) async {

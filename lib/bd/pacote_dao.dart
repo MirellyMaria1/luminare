@@ -17,4 +17,7 @@ class PacoteDao {
 
     return lista;
   }
+  saveUser(Register register) async {
+    Database database = await DBHelper().initDB();
+    database.insert('REGISTER', register.toJson());
 }
