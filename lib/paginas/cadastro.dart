@@ -1,12 +1,11 @@
-import 'package:untitled3/bd/user_dao.dart';
-import 'package:untitled3/domain/user.dart';
-import 'package:untitled3/paginas/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:untitled3/paginas/login.dart';
+import '../bd/pacote_dao.dart';
+import '../domain/register.dart';
 
 class Cadastro extends StatefulWidget {
-  const Cadastro ({super.key});
+  const Cadastro({super.key});
 
   @override
   State<Cadastro> createState() => _LoginState();
@@ -99,17 +98,7 @@ class _LoginState extends State<Cadastro> {
               const SizedBox(height: 32),
               // Spacer(),
               ElevatedButton(
-                onPressed: () {
-                  Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) {
-                        return const Login();
-                      },
-                    ),
-                  );
-
-                },
+                onPressed: onPressed,
                 style: ElevatedButton.styleFrom(
                   backgroundColor: const Color(0xFFDFC8BC),
                   shape: RoundedRectangleBorder(
@@ -152,16 +141,16 @@ class _LoginState extends State<Cadastro> {
       ),
     );
   }
+
   Future<void> onPressed() async {
     if (formKey.currentState!.validate()) {
       String email = emailController.text;
-      String usuario = usuarioController.text;
-      String senha = senhaController.text;
+      String username = usuarioController.text;
+      String password = senhaController.text;
 
-      User user = User(email, usuario, senha);
-      await UserDao().saveUser(user);
+      Register register = Register(username: username, email: email, password: password);
+      await UserDao().saveRegister(register);
       Navigator.pop(context);
     }
   }
 }
-

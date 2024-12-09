@@ -1,7 +1,7 @@
 class Register {
   late String username;
   late String email;
-  late int password;
+  late String password;
 
   Register({
     required this.username,
@@ -10,17 +10,16 @@ class Register {
   });
 
   Register.fromJson(Map<String, dynamic> json) {
-    usuario = json['username'];
+    username = json['username'];
     email = json['email'];
-    senha = json['password'];
+    password = json['password'];
   }
 
   Map<String, dynamic> toJson() {
     Map<String, dynamic> json = <String, dynamic>{};
-    json['username'] = usuario;
-    json['password'] = senha;
+    json['username'] = username;
+    json['password'] = password;
     json['email'] = email;
     return json;
   }
-}
 }

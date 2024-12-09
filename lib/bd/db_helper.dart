@@ -17,11 +17,11 @@ class DBHelper {
 
   FutureOr<void> onCreate(Database db, int version) async {
     String sql =
-        'CREATE TABLE CADASTRO (id INTEGER PRIMARY KEY, email varchar(100), username varchar(100), password INTEGER);';
+        'CREATE TABLE CADASTRO (email varchar(100) PRIMARY KEY, username varchar(100), password  varchar(100));';
     await db.execute(sql);
 
     sql =
-    "INSERT INTO PACOTE (id, email, username, password ) VALUES (1, mmmp1@aluno.ifal.edu.br, Mirelly, 123456);";
+    "INSERT INTO CADASTRO (email, username, password ) VALUES ('mmmp1@aluno.ifal.edu.br', 'Mirelly', '123456');";
     await db.execute(sql);
 
   }

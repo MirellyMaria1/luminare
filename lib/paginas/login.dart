@@ -1,5 +1,5 @@
 
-import 'package:untitled3/bd/user_dao.dart';
+import 'package:untitled3/bd/pacote_dao.dart';
 import 'package:untitled3/paginas/home_page.dart';
 import 'package:untitled3/paginas/cadastro.dart';
 import 'package:flutter/material.dart';
@@ -124,7 +124,7 @@ class _LoginState extends State<Login> {
                 ),
                 TextButton(
                   onPressed: () {
-                    Navigator.pushReplacement(
+                    Navigator.push(
                       context,
                       MaterialPageRoute(
                         builder: (context) {
@@ -175,7 +175,7 @@ class _LoginState extends State<Login> {
       String usuario = usuarioController.text;
       String senha = senhaController.text;
 
-      bool auth = await UserDao().autenticar (usuario, senha);
+      bool auth = await UserDao().autenticar(usuario, senha);
 
       if (auth) {
         // SharedPrefs().setUser(true);
@@ -195,6 +195,5 @@ class _LoginState extends State<Login> {
     }
   }
 }
-
 
 
