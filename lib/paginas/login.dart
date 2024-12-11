@@ -77,7 +77,7 @@ class _LoginState extends State<Login> {
                       String email = usuarioController.text;
                       String senha = senhaController.text;
                       if (email == 'mirelly maria' && senha == '123456') {
-                        Navigator.pushReplacement(
+                        Navigator.push(
                           context,
                           MaterialPageRoute(
                             builder: (context) {
@@ -181,7 +181,7 @@ class _LoginState extends State<Login> {
         // SharedPrefs().setUser(true);
 
         // Navegar p/ HomePage
-        Navigator.pushReplacement(
+        Navigator.push(
           context,
           MaterialPageRoute(
             builder: (context) {
