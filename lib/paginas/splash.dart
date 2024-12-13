@@ -22,7 +22,7 @@ class _SplashPageState extends State<SplashPage> {
   // Função que simula a verificação do status do usuário
   Future<void> checkUserStatus() async {
     // Aqui você simula a lógica de autenticação. Pode ser substituída por lógica de banco de dados ou API.
-    await Future.delayed(const Duration(seconds: 3)); // Simula o tempo de carregamento
+    await Future.delayed(const Duration(seconds: 5)); // Simula o tempo de carregamento
 
     if (isUserAuthenticated) {
       // Se o usuário estiver autenticado, redireciona para a HomePage
@@ -50,9 +50,9 @@ class _SplashPageState extends State<SplashPage> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: const Color(0xFF233E7D),
+      color: const Color(0xFFDFC8BC),
       child: Image.network(
-          'https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Logo-hurb-branca-bg-azul.jpg/440px-Logo-hurb-branca-bg-azul.jpg'),
+          'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.behance.net%2Fsearch%2Fprojects%2Flogotipo%2520semijoias&psig=AOvVaw3Kr_Smg_uz07jWXNtPUMdU&ust=1734179473592000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCNi6h5ngpIoDFQAAAAAdAAAAABAE.png'),
     );
   }
 }
