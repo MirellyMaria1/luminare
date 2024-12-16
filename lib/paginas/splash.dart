@@ -2,9 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:untitled3/paginas/home_page.dart';
 import 'package:untitled3/paginas/login.dart';
 
-// Simulando o status do usuário. Normalmente, isso viria de um banco de dados ou de um login.
-bool isUserAuthenticated = false;  // Defina isso de acordo com o seu fluxo de autenticação.
-
+bool isUserAuthenticated = false; 
 class SplashPage extends StatefulWidget {
   const SplashPage({super.key});
 
@@ -19,14 +17,12 @@ class _SplashPageState extends State<SplashPage> {
     checkUserStatus();
   }
 
-  // Função que simula a verificação do status do usuário
+  
   Future<void> checkUserStatus() async {
-    // Aqui você simula a lógica de autenticação. Pode ser substituída por lógica de banco de dados ou API.
-    await Future.delayed(const Duration(seconds: 5)); // Simula o tempo de carregamento
+      await Future.delayed(const Duration(seconds: 5));
 
     if (isUserAuthenticated) {
-      // Se o usuário estiver autenticado, redireciona para a HomePage
-      Navigator.push(
+           Navigator.push(
         context,
         MaterialPageRoute(
           builder: (context) {
@@ -35,8 +31,7 @@ class _SplashPageState extends State<SplashPage> {
         ),
       );
     } else {
-      // Se o usuário não estiver autenticado, redireciona para a página de Login
-      Navigator.push(
+           Navigator.push(
         context,
         MaterialPageRoute(
           builder: (context) {
