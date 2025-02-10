@@ -1,7 +1,10 @@
-import 'package:ana4/domain/cardfavs.dart';
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:ana4/BD/pacotedao.dart';
+import 'package:untitled3/bd/PacoteDao.dart';
+
+import 'cardfavs.dart';
+
 
 
 class RegisterProduct extends StatefulWidget {

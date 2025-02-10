@@ -1,56 +1,32 @@
-import 'package:ana4/pages/detail_page.dart';
 import 'package:flutter/material.dart';
-import 'package:ana4/domain/cardfavs.dart';
-import 'package:ana4/BD/database2.dart';
-
-
-
-
-
-
-
+import 'package:untitled3/bd/PacoteDao.dart';
+import 'package:untitled3/domain/cardfavs.dart';
+import 'package:untitled3/paginas/DetailPage.dart';
 
 class FavoritesPage extends StatefulWidget {
   const FavoritesPage({Key? key}) : super(key: key);
-
-
-
-
-
-
-
 
   @override
   State<FavoritesPage> createState() => _FavoritesPageState();
 }
 
-
-
-
-
-
-
-
 class _FavoritesPageState extends State<FavoritesPage> {
+  List favoriteItems = [];
 
+  @override
+  void initState() {
+    super.initState();
+    loadData();
+  }
 
-
-
-
-
-
+  loadData() async {
+    favoriteItems = await PacoteDao().listarcards();
+    setState(() {});
+  }
 
   @override
   Widget build(BuildContext context) {
     // Corrigido: Lista agora tem o tipo correto
-    List favoriteItems = Database.cardfav;
-
-
-
-
-
-
-
 
     return Scaffold(
       backgroundColor: Colors.white,
@@ -68,13 +44,6 @@ class _FavoritesPageState extends State<FavoritesPage> {
           itemBuilder: (context, index) {
             // Corrigido: 'favoriteItems' está sendo usado corretamente
             Cardfavorito item = favoriteItems[index];
-
-
-
-
-
-
-
 
             return GestureDetector(
               onTap: () {

@@ -1,55 +1,24 @@
 import 'package:flutter/material.dart';
 import 'favoritespage.dart';
 
-
-
-
-
-
-
-
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
-
-
-
-
-
-
-
 
   @override
   State<HomePage> createState() => _HomePageState();
 }
 
-
-
-
 class _HomePageState extends State<HomePage> {
   final TextEditingController _passwordController = TextEditingController();
   String? _errorMessage;
 
-
-
-
   void _validatePassword() {
     setState(() {
-
-
-
-
-
-
-
-
       _errorMessage = _passwordController.text.length < 8
           ? 'A senha deve ter no mínimo 8 caracteres.'
           : null;
     });
   }
-
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -68,10 +37,6 @@ class _HomePageState extends State<HomePage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-
-
-
-
               TextField(
                 controller: _passwordController,
                 obscureText: true,
@@ -85,13 +50,10 @@ class _HomePageState extends State<HomePage> {
                 onPressed: () {
                   _validatePassword();
                   if (_errorMessage == null) {
-
-
-
-
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => const FavoritesPage()),
+                      MaterialPageRoute(
+                          builder: (context) => const FavoritesPage()),
                     );
                   }
                 },

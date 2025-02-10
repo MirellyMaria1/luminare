@@ -1,11 +1,18 @@
-import 'package:untitled3/paginas/login.dart';
 import 'package:flutter/material.dart';
-
+import 'package:untitled3/paginas/HomePage.dart';
 
 void main() {
-  runApp(
-    const MaterialApp(
-        home: Login()
-    ),
-  );
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return const MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: HomePage(),
+    );
+  }
 }
