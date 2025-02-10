@@ -1,6 +1,7 @@
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/material.dart';
-
+import 'package:untitled3/pages/map_page.dart';
+import 'package:geocoding/geocoding.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -64,6 +65,34 @@ class _HomePageState extends State<HomePage> {
               ),
             ],
           ),
+
+          TextButton(
+            onPressed: () async {
+
+
+              List<Location> locations = await locationFromAddress(pacote.cidade);
+              Location location =  locations[0];
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) {
+                    return MapPage(
+                      lat: location.latitude,
+                      long: location.longitude,
+                    );
+                  },
+                ),
+              );
+            },
+            child: Text(
+              'Ver no mapa',
+              style: GoogleFonts.montserrat(
+                fontSize: 14,
+                fontWeight: FontWeight.w500,
+              ),
+            ),
+          ),
+
           Image.network(
               'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXjKZyt5EEVhzueKy9LCwUYSbq1BtmaLsE4g&s'),
           Padding(
