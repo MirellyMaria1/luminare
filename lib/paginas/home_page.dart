@@ -1,7 +1,8 @@
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/material.dart';
-import 'package:untitled3/pages/map_page.dart';
+
 import 'package:geocoding/geocoding.dart';
+import 'package:untitled3/paginas/map.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -68,9 +69,7 @@ class _HomePageState extends State<HomePage> {
 
           TextButton(
             onPressed: () async {
-
-
-              List<Location> locations = await locationFromAddress(pacote.cidade);
+              List<Location> locations = await locationFromAddress('');
               Location location =  locations[0];
               Navigator.push(
                 context,
