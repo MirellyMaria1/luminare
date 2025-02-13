@@ -124,6 +124,24 @@ class _LoginState extends State<Cadastro> {
     );
   }
 
+  onPressedIconButton() async {
+    String cep = cepController.text;
+    try {
+      Address address = await AddressApi().findAddressByCep(cep);
+      enderecoController.text = address.address;
+    } catch (e) {
+      showSnackBar('Erro!');
+    }
+  }
+
+  showSnackBar(String snackBarMessage) {
+    SnackBar snackBar = SnackBar(
+      content: Text(snackBarMessage),
+    );
+
+    ScaffoldMessenger.of(context).showSnackBar(snackBar);
+  }
+
   buildInputDecoration(String name) {
     return InputDecoration(
       label: Text(name),
