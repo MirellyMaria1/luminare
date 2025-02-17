@@ -1,35 +1,35 @@
 class Address {
   late String cep;
-  late String state;
-  late String city;
-  late String neighborhood;
-  late String street;
+  late String estado;
+  late String cidade;
+  late String bairro;
+  late String rua;
 
   Address({
     required this.cep,
-    required this.state,
-    required this.city,
-    required this.neighborhood,
-    required this.street,
+    required this.estado,
+    required this.cidade,
+    required this.bairro,
+    required this.rua,
   });
 
-  String get address => '$street, $neighborhood, $city - $state';
+  String get address => '$rua, $bairro, $cidade - $estado’;
 
   Address.fromJson(Map<String, dynamic> json) {
     cep = json['cep'];
-    state = json['state'];
-    city = json['city'];
-    neighborhood = json['neighborhood'] ?? '';
-    street = json['street'] ?? '';
+    estado = json['estado'];
+    cidade = json['cidade'];
+    bairro = json['bairro'] ?? '';
+    rua = json['rua'] ?? '';
   }
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = <String, dynamic>{};
     data['cep'] = cep;
-    data['state'] = state;
-    data['city'] = city;
-    data['neighborhood'] = neighborhood;
-    data['street'] = street;
+    data['estado'] = estado;
+    data['cidade'] = cidade;
+    data['bairro'] = bairro;
+    data['rua'] = rua;
 
     return data;
   }

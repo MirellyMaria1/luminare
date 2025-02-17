@@ -12,9 +12,5 @@ class AddressApi {
     print(response);
     return address;
 
-    <manifest ...
-    <application ...
-    <meta-data android:name="com.google.android.geo.API_KEY"
-    android:value="AIzaSyCaZJAlH2GIFrnMoNpv7gRp6YJX9QleFfY"/>
   }
 }
