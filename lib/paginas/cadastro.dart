@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:untitled3/api/api.dart';
+import 'package:untitled3/domain/address.dart';
 import 'package:untitled3/paginas/login.dart';
 import '../bd/pacote_dao.dart';
 import '../domain/register.dart';
@@ -15,6 +17,9 @@ class _LoginState extends State<Cadastro> {
   TextEditingController emailController = TextEditingController();
   TextEditingController usuarioController = TextEditingController();
   TextEditingController senhaController = TextEditingController();
+  TextEditingController cepController = TextEditingController();
+  TextEditingController enderecoController = TextEditingController();
+
 
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
 

@@ -13,7 +13,7 @@ class Address {
     required this.rua,
   });
 
-  String get address => '$rua, $bairro, $cidade - $estado’;
+  String get address => '$rua, $bairro, $cidade - $estado';
 
   Address.fromJson(Map<String, dynamic> json) {
     cep = json['cep'];
